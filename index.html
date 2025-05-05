@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Generador de Códigos de Barras</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.3/JsBarcode.all.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Navbar con íconos -->
+  <nav>
+    <ul>
+      <li><a href="#" onclick="mostrarSeccion('una')"><i data-lucide="credit-card"></i> Una Tarjeta</a></li>
+      <li><a href="#" onclick="mostrarSeccion('dos')"><i data-lucide="copy"></i> Dos Tarjetas</a></li>
+    </ul>
+  </nav>
+
+  <!-- Título -->
+  <h1 id="titulo">Generador de Código de Barras</h1>
+
+  <!-- Sección UNA tarjeta -->
+  <div class="section active" id="seccion-una">
+    <div class="container">
+      <div class="card">
+        <input type="text" id="text-solo" placeholder="Texto del código">
+        <div class="barcode-container">
+          <svg id="barcode-solo"></svg>
+          <input class="comentario" id="comentario-solo" placeholder="Comentario...">
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+      <button onclick="generarUno()">Generar</button>
+      <button onclick="window.print()">Imprimir</button>
+    </div>
+  </div>
+
+  <!-- Sección DOS tarjetas -->
+  <div class="section" id="seccion-dos">
+    <div class="container">
+      <div class="card">
+        <input type="text" id="text1" placeholder="Texto del código 1">
+        <div class="barcode-container">
+          <svg id="barcode1"></svg>
+          <input class="comentario" id="comentario1" placeholder="Comentario 1...">
+        </div>
+      </div>
+      <div class="card">
+        <input type="text" id="text2" placeholder="Texto del código 2">
+        <div class="barcode-container">
+          <svg id="barcode2"></svg>
+          <input class="comentario" id="comentario2" placeholder="Comentario 2...">
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+      <button onclick="generarCodigos()">Generar ambos</button>
+      <button onclick="window.print()">Imprimir</button>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
+
